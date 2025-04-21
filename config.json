@@ -1,0 +1,17 @@
+{
+    "simulation_time": 3600,
+    "time_step": 0.5,
+    "mm_per_layer": 5,
+    "initial_temperature": 20.0,
+    "Convective_heat_transfer_coefficient": 10,
+    "ambient_temperature": 20,
+    "emissivity": 0.8,
+    "stefan_boltzmann_constant": 5.67e-8,
+    "Fire_curve": 3,
+    "Av": 31,
+    "At": 500,
+    "heq": 1.565,
+    "b": 1849,
+    "q_td": 340,
+    "tillväxthastighet": 15
+}
