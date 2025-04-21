@@ -1,7 +1,7 @@
 # Brandapp
 
 ## Beskrivning
-Brandapp är ett Python-baserat projekt för att simulera materialbeteende under brand. Projektet använder FEM (Finite Element Method) för att beräkna temperaturfördelningar.
+Brandapp är ett Python-baserat projekt för att simulera materialbeteende under brand. Projektet använder FEM för att beräkna temperaturfördelningar.
 
 ## Installation
 För att installera och köra projektet, följ dessa steg:
