@@ -13,9 +13,11 @@ To runb the code:
    ```
 
 
-### Brandtemperatur över tid
-Ekvationen för brandtemperatur över tid är:
-```latex
-\begin{equation}
-T_{fire}(t) = 20 + 345 \cdot \log_{10}\left(\frac{8t}{60} + 1\right)
-\end{equation}
+### The boundary conditions that are available are:
+ISO 834:
+
+$$ISO 834(t) = 20 + 345 \cdot \log_{10}\left(\frac{8t}{60} + 1\right) $$
+
+HC180: 
+
+$$HC180(t) = 20 + 1080 \left(1 - 0.325 e^{-0.167 t} - 0.675 e^{-2.5 t}\right)$$
