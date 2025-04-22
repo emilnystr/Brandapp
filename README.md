@@ -28,6 +28,8 @@ $$HC180(t) = 20 + 1080 \left(1 - 0.325 e^{-0.167 t} - 0.675 e^{-2.5 t}\right)$$
 
 Or the user have the option of using an automatically generated parametric fire curve based on the equations given in SS-EN 1991-1-2 Annex A (option 3 in fire_curve). The necessary input is specified in the config.json file. 
 
+The user can also choose to have a constant surface temperature (option 4 in fire_curve)
+
 
 ## Default JSON configuration file
 
