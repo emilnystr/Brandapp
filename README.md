@@ -9,13 +9,7 @@ $$\rho(T)c_p(T)\frac{\partial T}{\partial t} = \nabla\cdot(k(T)\nabla T) + Q$$
 
 
 
-$$\begin{bmatrix} 1 & -1 \\ -1 & 1 \end{bmatrix}$$ 
-
-$$c_e &= \frac{\rho c_p dx}{2}$$ * $$\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}$$
-
-which are combined later to global matrices.
-
-Then the energy balance equation is constructed as:
+The energy balance equation is constructed as:
 $$\overline{C} \frac{d\overline{T}}{dt} + \overline{K}\overline{T} = \overline{Q}$$
 
 which is rearranged as:
