@@ -36,7 +36,7 @@ Or the user have the option of using an automatically generated parametric fire 
     "simulation_time": 3600,
     "time_step": 0.5,
     "mm_per_layer": 5,
-    "initial_temperature": 20.0,
+    "initial_temperature": 20,
     "Convective_heat_transfer_coefficient": 10,
     "ambient_temperature": 20,
     "emissivity": 0.8,
