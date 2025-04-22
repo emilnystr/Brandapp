@@ -16,6 +16,8 @@ which is rearranged as:
 
 $$\overline{T}^{j+1}={T}^{j}+dt\cdot\overline{C}^{-1}(\overline{Q}^{j}-\overline{K}\cdot \overline{T}^{j})$$
 
+The heat flux to the surface and out from the surface is modelled with combined radiation and convection:
+
 $$q'' = h(T_\infty - T_s) + \sigma\epsilon(T_\infty^4 - T_s^4)$$
 
 ## Installation
