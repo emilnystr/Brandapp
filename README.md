@@ -3,6 +3,33 @@
 ## Description
 Brandapp is finite element program developed in python, to simulate transient heat transfer inside solids exposed to fire.
 
+The code solves this partial differential equation:
+
+$$\rho(T)c_p(T)\frac{\partial T}{\partial t} = \nabla\cdot(k(T)\nabla T) + Q$$
+
+
+
+$$k_e &= \frac{k}{dx}\begin{bmatrix}
+1 & -1 \\ 
+-1 & 1
+\end{bmatrix}$$ 
+
+$$c_e &= \frac{\rho c_p dx}{2}\begin{bmatrix}
+1 & 0 \\ 
+0 & 1
+\end{bmatrix}$$
+
+which are combined later to global matrices.
+
+Then the energy balance equation is constructed as:
+$$\overline{C} \frac{d\overline{T}}{dt} + \overline{K}\overline{T} = \overline{Q}$$
+
+which is rearranged as:
+
+$$\overline{T}^{j+1}={T}^{j}+dt\cdot\overline{C}^{-1}(\overline{Q}^{j}-\overline{K}\cdot \overline{T}^{j})$$
+
+$$q'' = h(T_\infty - T_s) + \sigma\epsilon(T_\infty^4 - T_s^4)$$
+
 ## Installation
 To run the code:
 
@@ -55,3 +82,5 @@ The user can also choose to have a constant surface temperature (option 4 in fir
 The temperature dependent material properties are built in inside the material.py file.
 
 The default model is numerically stable for the current time step and spatial step, though the user must keep in mind that when using very small elements or/and having material with very high conductivity, the time step size may need to be decreased.
+
+
