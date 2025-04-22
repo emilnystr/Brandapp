@@ -52,4 +52,4 @@ Or the user have the option of using an automatically generated parametric fire 
 ```
 The temperature dependent material properties are built in inside the material.py file.
 
-The default model is numerically stable for the current time step and spatial step, though the user is responsible for doing the necessary adjustment needed if the derivatives of the system increases when adding new materials for example.
+The default model is numerically stable for the current time step and spatial step, though the user must keep in mind that when using very small elements or/and having material with very high conductivity, the time step size may need to be decreased.
