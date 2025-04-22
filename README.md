@@ -9,7 +9,7 @@ $$\rho(T)c_p(T)\frac{\partial T}{\partial t} = \nabla\cdot(k(T)\nabla T) + Q$$
 
 
 
-$$ \begin{bmatrix} 1 & -1 \\ -1 & 1 \end{bmatrix}$$ 
+$$\begin{bmatrix} 1 & -1 \\ -1 & 1 \end{bmatrix}$$ 
 
 $$c_e &= \frac{\rho c_p dx}{2}$$ * $$\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}$$
 
