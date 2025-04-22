@@ -50,4 +50,6 @@ Or the user have the option of using an automatically generated parametric fire 
     "tillväxthastighet": 15
 }
 ```
-The 
+The temperature dependent material properties are built in inside the material.py file.
+
+The default model is numerically stable for the current time step and spatial step, though the user is responsible for doing the necessary adjustment needed if the derivatives of the system increases when adding new materials for example.
