@@ -16,4 +16,9 @@ material_databas.append((  # Stål
     np.array([7850]*12, dtype=np.float32)
 ))
 
-
+material_databas.append((  # trä
+    np.array([0, 20, 100, 101, 120, 121, 200, 300, 500, 800, 1200 ], dtype=np.float32),
+    np.array([0.12, 0.3, 0.13, 0.13, 0.13, 0.13, 0.15, 0.07, 0.09, 0.35, 1.5 ], dtype=np.float32),
+    np.array([1000, 1530, 1770, 13600, 13500, 2120, 1200, 1400, 1600, 1650, 1650 ], dtype=np.float32),
+    np.array([504, 504, 504, 504, 450, 450, 450, 418, 342, 234, 171, 157, 126], dtype=np.float32)
+))

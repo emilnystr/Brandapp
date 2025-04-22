@@ -11,7 +11,7 @@ from Parametrisk_brandkurva import*
 with open('config.json', 'r') as config_file:
     config = json.load(config_file)
 
-
+ 
 
 
 
@@ -28,6 +28,8 @@ sigma = config["stefan_boltzmann_constant"]
 epsilon = config["emissivity"]
 dt = config["time_step"]
 brandkurva = config["Fire_curve"]
+Constant_surface_temperature = config["constant_surface_temperature"]
+
 
 
 
@@ -45,6 +47,10 @@ for i in range(antal_tidssteg):
         T_fire = HC180(tid)
     elif brandkurva == 3:
         T_fire = parametrisk_brand(tid) #tänk på att den parametriska branden återgår till 20 grader efter en tid, beror på brandbelastningen, så man kan inte simulera värmeledningen hur länge som helst med denna brandkurva
+    elif brandkurva == 4:
+        T_fire = Constant_surface_temperature
+
+    
     else:
         print("du har angett en felaktig brandkurva")
 

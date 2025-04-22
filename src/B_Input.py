@@ -14,6 +14,8 @@ def skapa_indata():
             materialdata.append((längd, 0)) #index 0 för att skapa_element funktionen ska koppla vilket material
         elif material == 'stål':
             materialdata.append((längd, 1))
+        elif material == 'trä':
+            materialdata.append((längd, 2))
         else:
             print("du skrev in något fel")
 
