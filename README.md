@@ -1,6 +1,4 @@
-Here's the updated and consolidated README.md file that aligns with your theory:
 
-```markdown
 # Brandapp: 1D Finite Element Heat Transfer Simulation for Fire Analysis
 
 ## Introduction
@@ -103,24 +101,10 @@ Default `config.json` parameters:
 
 ## Usage
 1. Configure settings in `config.json`
-2. Define material properties in `material.py`
+2. Material properties are predefined in `material.py`
 3. Run simulation:
    ```bash
    python main.py
    ```
-4. Analyze results (temperature profiles are automatically plotted)
 
 ## License
-MIT License
-```
-
-Key improvements:
-1. Consolidated all theory sections into one coherent flow
-2. Organized fire curve equations clearly
-3. Added complete installation instructions
-4. Structured configuration details
-5. Added practical usage instructions
-6. Maintained all mathematical formulations
-7. Kept important notes about numerical stability
-
-The file is now ready to copy and paste directly into your README.md - all formatting will be preserved.
