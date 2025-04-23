@@ -9,12 +9,13 @@ def parametrisk_kurva():
         cfg = json.load(f)
 
     # Läs parametrar
-    tillväxt = 15  # tillfälligt värde
+    #tillväxt = 15  # tillfälligt värde
     Av = cfg["Av"]
     At = cfg["At"]
     heq = cfg["heq"]
     b = cfg["b"]
     q_td = cfg["q_td"]
+    tillväxt = cfg["tillvaxthastighet"]
     t_lim = tillväxt / 60
 
     # Beräkna O och kontrollera giltighet
@@ -121,4 +122,4 @@ def plot_kurva(tider, temperaturer):
 if __name__ == "__main__":
     tider, temperaturer, t_max, config = parametrisk_kurva()
     plot_kurva(tider, temperaturer)
-    print(temperaturer)
+    #print(temperaturer)
