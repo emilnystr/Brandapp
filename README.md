@@ -1,3 +1,27 @@
+# Brandapp: 1D Heat Transfer Simulation using Finite Element Method
+
+## Introduction
+This application simulates heat conduction in multi-layered materials with temperature-dependent properties using the Finite Element Method (FEM). It is designed to verify fire compartment boundaries or assist engineers in temperature analysis of fire-exposed structures. Key features include:
+- Dynamic adjustment of spatial discretization for varying material thicknesses.
+- Support for ISO 834 standard fire curves and parametric fire scenarios.
+- Numba-accelerated computations for performance-critical tasks.
+
+**Note**: This is a 1D model and cannot analyze complex geometries. Users must carefully assess simplifications.
+
+---
+
+## Governing Equations
+
+### Heat Transfer Equation
+The core PDE solved is:
+```math
+\rho(T)c_p(T)\frac{\partial T}{\partial t} = \nabla\cdot(k(T)\nabla T) + Q
+
+
+
+
+
+
 # Brandapp
 
 ## Description
