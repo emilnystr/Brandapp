@@ -85,6 +85,7 @@ Default `config.json` parameters:
     "emissivity": 0.8,
     "stefan_boltzmann_constant": 5.67e-8,
     "Fire_curve": 3,
+    "constant_surface_temperature": 564,
     "Av": 31,
     "At": 500,
     "heq": 1.565,
@@ -92,6 +93,7 @@ Default `config.json` parameters:
     "q_td": 340,
     "growth_rate": 15
 }
+Here the Fire_curve value 1 represents ISO 834, 2 HC 180, 3 Parametric fire, 4 constant surface temperature
 ```
 
 ## Numerical Considerations
