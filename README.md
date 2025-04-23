@@ -66,7 +66,7 @@ The user can also choose to have a constant surface temperature (option 4 in fir
     "heq": 1.565,
     "b": 1849,
     "q_td": 340,
-    "tillväxthastighet": 15
+    "growth_rate": 15
 }
 ```
 The temperature dependent material properties are built in inside the material.py file.
