@@ -13,9 +13,12 @@ This application simulates heat conduction in multi-layered materials with tempe
 ## Governing Equations
 
 ### Heat Transfer Equation
+
 The core PDE solved is:
 ```math
 \rho(T)c_p(T)\frac{\partial T}{\partial t} = \nabla\cdot(k(T)\nabla T) + Q
+
+```
 
 
 
