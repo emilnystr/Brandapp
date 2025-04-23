@@ -15,7 +15,7 @@ def parametrisk_kurva():
     heq = cfg["heq"]
     b = cfg["b"]
     q_td = cfg["q_td"]
-    tillväxt = cfg["tillvaxthastighet"]
+    tillväxt = cfg["growth_rate"]
     t_lim = tillväxt / 60
 
     # Beräkna O och kontrollera giltighet
