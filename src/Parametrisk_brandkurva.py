@@ -8,8 +8,7 @@ def parametrisk_kurva():
     with open("config.json", 'r') as f:
         cfg = json.load(f)
 
-    # Läs parametrar
-    #tillväxt = 15  # tillfälligt värde
+    
     Av = cfg["Av"]
     At = cfg["At"]
     heq = cfg["heq"]
@@ -18,20 +17,20 @@ def parametrisk_kurva():
     tillväxt = cfg["growth_rate"]
     t_lim = tillväxt / 60
 
-    # Beräkna O och kontrollera giltighet
+    
     O = (Av * math.sqrt(heq)) / At
     if not 0.02 <= O <= 0.20:
         raise ValueError(f"Ogiltigt O-värde: {O:.3f}. Måste vara mellan 0.02 och 0.20")
     if not 100 <= b <= 2200:
         raise ValueError(f"Ogiltigt b-värde: {b:.1f}. Måste vara mellan 100 och 2200")
 
-    # Beräkningar
+    
     Gamma = ((O / b) ** 2) / ((0.04 / 1160) ** 2)
     t_max_temp = 0.2e-3 * q_td / O
     t_max = max(t_max_temp, t_lim)
     t_star_max = t_max * Gamma
 
-    # Temperatur vid t_max
+    
     T_max = 20 + 1325 * (
         1 - 0.324 * math.exp(-0.2 * t_star_max)
         - 0.204 * math.exp(-1.7 * t_star_max)
@@ -41,8 +40,8 @@ def parametrisk_kurva():
     # Avkylningsfaktor
     x = 1.0 if t_max_temp > t_lim else (t_lim * Gamma / t_star_max)
 
-    # Simuleringstider (sekunder)
-    simuleringstid = 10**4  # gräns
+   
+    simuleringstid = 10**4  
     tider = []
     temperaturer = []
     O_lim = (0.1e-3 * q_td) / t_lim
@@ -85,10 +84,9 @@ def parametrisk_kurva():
     return tider, temperaturer, t_max, cfg
 
 
-# Hämta den parametriska brandkurvans data
+
 tider_hours, temperaturer, t_max, cfg = parametrisk_kurva()
 
-# Konvertera till NumPy-array för Numba
 temperaturer_array = np.array(temperaturer, dtype=np.float32)
 
 @njit
