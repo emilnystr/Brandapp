@@ -29,14 +29,20 @@ def linjär_interpolering(temperaturer, värden, T):
 def beräkna_matriser(element_sizes, element_material_indices, material_databas, T):
     n = len(T)
     K = np.zeros((n, n), dtype=np.float32)
-    C = np.zeros(n, dtype=np.float32)  #endimensionell array istället för matris
-    
+    C = np.zeros(n, dtype=np.float32)
+
     for i in range(len(element_sizes)):
         dx = element_sizes[i]
         mat_idx = element_material_indices[i]
-        temp, k_vals, c_vals, rho_vals = material_databas[mat_idx]
         
         T_avg = (T[i] + T[i+1]) / 2
+        
+        # Hämta materialdata direkt från strukturerad NumPy-array
+        k_vals = material_databas[mat_idx]["värmeledning"]
+        c_vals = material_databas[mat_idx]["specifik_värmekapacitet"]
+        rho_vals = material_databas[mat_idx]["densitet"]
+        temp = material_databas[mat_idx]["temperatur"]
+        
         k = linjär_interpolering(temp, k_vals, T_avg)
         c = linjär_interpolering(temp, c_vals, T_avg)
         rho = linjär_interpolering(temp, rho_vals, T_avg)

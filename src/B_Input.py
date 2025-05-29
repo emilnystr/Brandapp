@@ -1,8 +1,9 @@
 from A_Material import*
+from numba.typed import List
 
 def skapa_indata():
     indata = input("Ange material och längd (ex: '13 stål, 40 betong'): ")
-    lager_strängar = indata.split(',')
+    lager_strängar = indata.split(',') #dela upp i lista av delsträngar
     materialdata = List()
 
     for i in lager_strängar:
