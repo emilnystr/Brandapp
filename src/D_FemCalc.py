@@ -38,10 +38,10 @@ def beräkna_matriser(element_sizes, element_material_indices, material_databas,
         T_avg = (T[i] + T[i+1]) / 2
         
         # Hämta materialdata direkt från strukturerad NumPy-array
-        k_vals = material_databas[mat_idx]["värmeledning"]
-        c_vals = material_databas[mat_idx]["specifik_värmekapacitet"]
-        rho_vals = material_databas[mat_idx]["densitet"]
-        temp = material_databas[mat_idx]["temperatur"]
+        temp = material_databas[mat_idx][0]
+        k_vals = material_databas[mat_idx][1]
+        c_vals = material_databas[mat_idx][2]
+        rho_vals = material_databas[mat_idx][3]
         
         k = linjär_interpolering(temp, k_vals, T_avg)
         c = linjär_interpolering(temp, c_vals, T_avg)
