@@ -35,7 +35,7 @@ def beräkna_matriser(element_sizes, element_material_indices, material_databas,
         dx = element_sizes[i]
         mat_idx = element_material_indices[i]
         
-        T_avg = (T[i] + T[i+1]) / 2
+        T_avg = (T[i] + T[i+1]) * 0.5
         
         # Hämta materialdata direkt från strukturerad NumPy-array
         temp = material_databas[mat_idx][0]
@@ -54,7 +54,7 @@ def beräkna_matriser(element_sizes, element_material_indices, material_databas,
         K[i+1, i+1] += k/dx
         
         # Uppdatera värmekapacitetsvektorn C
-        C_val = rho * c * dx / 2
+        C_val = rho * c * dx *0.5
         C[i] += C_val
         C[i+1] += C_val
         

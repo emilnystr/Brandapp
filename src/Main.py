@@ -28,8 +28,7 @@ T = np.full(antal_noder, initial_temperature, dtype=np.float32)
 Q = np.zeros(antal_noder, dtype=np.float32)
 antal_tidssteg = int(simuleringstid / dt)
 
-# Beräknar hur ofta vi ska uppdatera status (var 1%)
-uppdatera_tid = max(1, antal_tidssteg // 50)
+
 
 start_time = time.time()
 for i in range(antal_tidssteg):
@@ -53,10 +52,7 @@ for i in range(antal_tidssteg):
     
     T += dt * (Q - K @ T) / C
     
-    #framstegsindikatorn
-    if i % uppdatera_tid == 0 or i == antal_tidssteg - 1:
-        procent_klar = (i + 1) / antal_tidssteg * 100
-        print(f"\rSimuleringen är {procent_klar:.1f}% klar", end="", flush=True)
+ 
 
 print(f"\nSimuleringen tog {time.time() - start_time:.2f} sekunder")
 

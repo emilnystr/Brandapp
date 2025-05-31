@@ -1,6 +1,5 @@
 import numpy as np
 
-# Materialdatabas som en NumPy array av objekttyp (dtype=object)
 material_databas = np.array([
     (  # Betong (index 0)
         np.array([0, 20, 100, 101, 120, 121, 200, 250, 300, 350, 400, 500, 600, 1200], dtype=np.float32),
