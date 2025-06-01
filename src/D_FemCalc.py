@@ -1,6 +1,5 @@
 import numpy as np
 from numba import njit
-import math
 from Parametrisk_brandkurva import*
 
 @njit
@@ -9,7 +8,7 @@ def iso_brandkurva(tid):
 
 @njit
 def HC180(tid):
-    return 20 + 1080 * (1 - 0.325 * math.exp(-0.167 * tid) - 0.675 * math.exp(-2.5 * tid)) #kolvätekurva
+    return 20 + 1080 * (1 - 0.325 * np.exp(-0.167 * tid) - 0.675 * np.exp(-2.5 * tid)) #kolvätekurva
 
 
 
@@ -32,12 +31,12 @@ def beräkna_matriser(element_sizes, element_material_indices, material_databas,
     C = np.zeros(n, dtype=np.float32)
 
     for i in range(len(element_sizes)):
-        dx = element_sizes[i]
+        dx = element_sizes[i] #element_sizes och element_material_indices har alltid samma index eftersom listorna är lika långa
         mat_idx = element_material_indices[i]
         
         T_avg = (T[i] + T[i+1]) * 0.5
         
-        # Hämta materialdata direkt från strukturerad NumPy-array
+       
         temp = material_databas[mat_idx][0]
         k_vals = material_databas[mat_idx][1]
         c_vals = material_databas[mat_idx][2]
@@ -47,13 +46,11 @@ def beräkna_matriser(element_sizes, element_material_indices, material_databas,
         c = linjär_interpolering(temp, c_vals, T_avg)
         rho = linjär_interpolering(temp, rho_vals, T_avg)
     
-        # Uppdatera styvhetsmatrisen K
         K[i, i] += k/dx
         K[i, i+1] -= k/dx
         K[i+1, i] -= k/dx
         K[i+1, i+1] += k/dx
         
-        # Uppdatera värmekapacitetsvektorn C
         C_val = rho * c * dx *0.5
         C[i] += C_val
         C[i+1] += C_val

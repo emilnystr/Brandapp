@@ -10,7 +10,6 @@ with open('config.json', 'r') as config_file:
 elementtjocklek_mm = config["mm_per_layer"]
 
 def skapa_element(materialdata):
-    #elementtjocklek_mm = 5 
     dx_target = elementtjocklek_mm / 1000
     element_sizes = []
     element_material_indices = []
