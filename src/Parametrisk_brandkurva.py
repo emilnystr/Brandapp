@@ -1,17 +1,21 @@
 import json
 import math
+from numba import njit
 
-def parametrisk_kurva(tid_sekunder):
-    with open("config.json", 'r') as f:
+with open("config.json", 'r') as f:
         cfg = json.load(f)
 
-    Av = cfg["Av"]
-    At = cfg["At"]
-    heq = cfg["heq"]
-    b = cfg["b"]
-    q_td = cfg["q_td"]
-    tillväxt = cfg["growth_rate"]
-    t_lim = tillväxt / 60  
+Av = cfg["Av"]
+At = cfg["At"]
+heq = cfg["heq"]
+b = cfg["b"]
+q_td = cfg["q_td"]
+tillväxt = cfg["growth_rate"]
+t_lim = tillväxt / 60 
+
+@njit
+def parametrisk_brand(tid_sekunder):
+     
 
     O = Av*(heq**0.5)/At
     Gamma = (O/b)**2/((0.04/1160)**2)

@@ -1,5 +1,5 @@
 {
-    "simulation_time": 120000,
+    "simulation_time": 7200,
     "time_step": 0.5,
     "mm_per_layer": 5,
     "initial_temperature": 20,
@@ -7,12 +7,12 @@
     "ambient_temperature": 20,
     "emissivity": 0.8,
     "stefan_boltzmann_constant": 5.67e-8,
-    "Fire_curve": 1,
+    "Fire_curve": 3,
     "constant_surface_temperature": 564,
     "Av": 31,
     "At": 500,
     "heq": 1.565,
     "b": 1849,
-    "q_td": 340,
+    "q_td": 162,
     "growth_rate": 15
 }
