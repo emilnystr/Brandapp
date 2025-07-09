@@ -32,15 +32,15 @@ def beräkna_matriser(element_sizes, element_material_indices, material_databas,
 
     for i in range(len(element_sizes)):
         dx = element_sizes[i] #element_sizes och element_material_indices har alltid samma index eftersom listorna är lika långa
-        mat_idx = element_material_indices[i]
+    
         
         T_avg = (T[i] + T[i+1]) * 0.5
         
        
-        temp = material_databas[mat_idx][0]
-        k_vals = material_databas[mat_idx][1]
-        c_vals = material_databas[mat_idx][2]
-        rho_vals = material_databas[mat_idx][3]
+        temp = material_databas[element_material_indices[i]][0]
+        k_vals = material_databas[element_material_indices[i]][1]
+        c_vals = material_databas[element_material_indices[i]][2]
+        rho_vals = material_databas[element_material_indices[i]][3]
         
         k = linjär_interpolering(temp, k_vals, T_avg)
         c = linjär_interpolering(temp, c_vals, T_avg)
