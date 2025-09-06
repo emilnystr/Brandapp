@@ -1,6 +1,4 @@
 
-# Brandapp: 1D Finite Element Heat Transfer Simulation for Fire Analysis
-
 ## Introduction
 Brandapp is a Python-based finite element program for simulating transient heat transfer in solids exposed to fire. The application solves the heat conduction equation in multi-layered materials with temperature-dependent properties using the Finite Element Method (FEM).
 
