@@ -1,6 +1,7 @@
-{
+{   
+    "model": 2,
     "simulation_time": 3600,
-    "time_step": 0.5,
+    "time_step": 0.1,
     "mm_per_layer": 5,
     "initial_temperature": 20,
     "Convective_heat_transfer_coefficient": 10,
